@@ -656,10 +656,10 @@ func repoRootForImportDynamic(importPath string, security web.SecurityMode) (*re
 	if slash < 0 {
 		slash = len(importPath)
 	}
-	host := importPath[:slash]
-	if !strings.Contains(host, ".") {
-		return nil, errors.New("import path does not begin with hostname")
-	}
+	// host := importPath[:slash]
+	// if !strings.Contains(host, ".") {
+	// 	return nil, errors.New("import path does not begin with hostname")
+	// }
 	urlStr, body, err := web.GetMaybeInsecure(importPath, security)
 	if err != nil {
 		msg := "https fetch: %v"
